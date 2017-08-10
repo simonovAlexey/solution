@@ -7,6 +7,6 @@ public class TaskA extends BaseTask{
     }
 
     public TaskA() {
-        super("interviewA", 0,6);
+        super("A", 0,6);
     }
 }

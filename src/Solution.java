@@ -1,4 +1,5 @@
 import java.io.*;
+import java.net.MalformedURLException;
 import java.time.LocalTime;
 
 public class Solution {
@@ -13,7 +14,7 @@ public class Solution {
     public static BaseTask getTask(String type) {
         BaseTask task;
         switch (type) {
-            case "interviewA":
+            case "A":
                 task = new TaskA();
                 break;
             case "B":
@@ -29,7 +30,7 @@ public class Solution {
         return task;
     }
 
-    /*public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
 
         int readDelay;
         File file;
@@ -50,7 +51,7 @@ public class Solution {
         Solution solution = new Solution(readDelay,file);
         Executor executor = new Executor();
         solution.run(executor);
-    }*/
+    }
 
     private void run(Executor executor) {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
