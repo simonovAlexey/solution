@@ -34,19 +34,20 @@ public class Solution {
 
         int readDelay;
         File file;
-
         try {
-            readDelay = Integer.parseInt(args[0]);
-        } catch (Exception e) {
-            readDelay = 2; //default value
-        }
-        try {
-            file = new File(args[1]);
+            file = new File(args[0]);
             if (!file.canRead()) throw new MalformedURLException();
         } catch (Exception e) {
             System.out.println("invalid file, check filename and path. For example: D:\\t.txt ");
             return;
         }
+
+        try {
+            readDelay = Integer.parseInt(args[1]);
+        } catch (Exception e) {
+            readDelay = 2; //default value
+        }
+
 
         Solution solution = new Solution(readDelay,file);
         Executor executor = new Executor();
